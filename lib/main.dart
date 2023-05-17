@@ -32,30 +32,23 @@ class _HomePageState extends State<HomePage> {
           title: Text("Frases do dia"),
           backgroundColor: Colors.green,
         ),
-        body: Column(
-          children: [
-            Padding(padding: EdgeInsets.only(top: 100)),
-            Container(
-              child: Center(
-                  child: Image.asset(
-                'images/frases_dia.png',
-                fit: BoxFit.contain,
-                alignment: Alignment.topCenter,
-              )),
-            ),
-            Padding(padding: EdgeInsets.only(top: 150)),
-            Column(
+        body: Container(
+          padding: EdgeInsets.all(40),
+          decoration:
+              BoxDecoration(border: Border.all(width: 3, color: Colors.amber)),
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text(
-                  "Batatinha quando nasce , se aparrama pelo chão",
-                  style: TextStyle(
-                      fontSize: 30,
-                      fontStyle: FontStyle.italic,
-                      fontWeight: FontWeight.w300),
-                ),
-              ],
-            )
-          ],
+                Image.asset('images/frases_dia.png'),
+                Text('Batatinha quando nasce , se esparrama pelo chão'),
+                ElevatedButton(
+                  onPressed: (() {}),
+                  child: Text('Nova frase'),
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateColor.resolveWith(
+                          (states) => Colors.green)),
+                )
+              ]),
         ));
   }
 }
